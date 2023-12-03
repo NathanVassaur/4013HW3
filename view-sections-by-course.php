@@ -10,7 +10,6 @@
       <th>Room</th>
       <th>Day - Time</th>
       </tr>
-      
     </thead>
     <tbody>
 <?php
