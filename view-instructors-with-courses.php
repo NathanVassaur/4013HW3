@@ -15,7 +15,7 @@ while($instructor = $instructors->fetch_assoc()){
   
   while($course = $courses->fetch_assoc()){
 ?>
-    <li class="list-group-item"><?php echo $course['course_name'];?> - <?php echo $course['semester'];?> - <?php echo $course['room'];?> - <?php echo $course['day_time'];?> /li>
+    <li class="list-group-item"><?php echo $course['course_name'];?> - <?php echo $course['semester'];?> - <?php echo $course['room'];?> - <?php echo $course['day_time'];?></li>
 <?php
     
   }
