@@ -11,7 +11,7 @@ while($instructor = $instructors->fetch_assoc()){
       <p class="card-text">
       <ul class="list-group">
   <?php
-  $course = selectCoursesByInstructor($instructor['instructor_id']);
+  $courses = selectCoursesByInstructor($instructor['instructor_id']);
   
   while($course = $courses->fetch_assoc()){
 ?>
