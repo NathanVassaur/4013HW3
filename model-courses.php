@@ -16,7 +16,7 @@ function insertCourse($cNumber, $cDesc) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("INSERT INTO `course` (`course_name`, `course_description`) VALUES (?,?)");
-        $stmt->blind_param("ss", $cNumber, $cDesc);
+        $stmt->bind_param("ss", $cNumber, $cDesc);
         $success = $stmt->execute();
         $conn->close();
         return $success;
@@ -29,7 +29,7 @@ function updateCourse($cNumber, $cDesc, $cid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("update `course` set `course_name`=?, `course_description`=? where course_id = ?");
-        $stmt->blind_param("ssi", $cNumber, $cDesc, $cid);
+        $stmt->bind_param("ssi", $cNumber, $cDesc, $cid);
         $success = $stmt->execute();
         $conn->close();
         return $success;
