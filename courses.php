@@ -1,6 +1,6 @@
 <?php
 require_once("util-db.php")
-require_once("models-courses.php");
+require_once("models-courses.php")
 
 $pageTitle = "Courses";
 include "view-header.php";
