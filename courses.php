@@ -8,12 +8,19 @@ include "view-header.php";
 if (isset($_POST['actionType'])){
   switch($_POST['actionType']){
     case "Add":
-    if(insertCourse($_POST['cNumber'], $_POST['cDesc'])){
-      echo '<div class="alert alert-success" role="alert">Course added. </div>';
-    } else {
-      echo '<div class="alert alert-danger" role="alert">Error. </div>';
-    }
-    break;
+      if(insertCourse($_POST['cNumber'], $_POST['cDesc'])){
+        echo '<div class="alert alert-success" role="alert">Course added. </div>';
+      } else {
+        echo '<div class="alert alert-danger" role="alert">Error. </div>';
+      }
+      break;
+    case "Add":
+      if(deleteCourse($_POST['cid'])){
+        echo '<div class="alert alert-success" role="alert">Course deleted. </div>';
+      } else {
+        echo '<div class="alert alert-danger" role="alert">Error. </div>';
+      }
+      break;
   }
 }
 
