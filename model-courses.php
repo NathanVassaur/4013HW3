@@ -42,7 +42,7 @@ function deleteCourse($cid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("delete from course where course_id = ?");
-        $stmt->blind_param("i", $cid);
+        $stmt->bind_param("i", $cid);
         $success = $stmt->execute();
         $conn->close();
         return $success;
