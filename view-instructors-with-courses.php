@@ -26,4 +26,7 @@ while($instructor = $instructors->fetch_assoc()){
       <p class="card-text"><small class="text-body-secondary">Office: <?php echo $instructor['office_number'];?></small></p>
     </div>
   </div>
-  }
+  <?php
+}
+?>
+</div>
