@@ -25,5 +25,19 @@ function selectCoursesByInstructor($iid) {
         $conn->close();
         throw $e;
     }
+    function insertSection($iid, $cid, $sem, $room, $time) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("INSERT INTO `section` (`instructor_id`, `course_id`, `semester`, `room`, `day_time`) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("iisss", $iid, $cid, $sem, $room, $time);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
 }
 ?>
